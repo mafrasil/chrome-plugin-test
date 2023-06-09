@@ -10,7 +10,7 @@ function App() {
   const [selectedDish, setSelectedDish] = useState(initialRecipes[0]);
 
   return (
-    <div className="h-[600px] w-[360px] bg-primary p-4">
+    <div className="h-[686px] w-[410px] relative bg-primary p-6">
         <Search selectedDish={selectedDish} setSelectedDish={setSelectedDish} />
         <Heading name={selectedDish.name} country={selectedDish.flag} />
         <Recipe dish={selectedDish} />

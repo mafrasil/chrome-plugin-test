@@ -5,17 +5,70 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./assets/fonts/helvetica-neue/HelveticaNeue-UltraLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+
 html,
 body {
-    @apply overflow-hidden;
+    @apply overflow-hidden font-helvetica;
 }
 
 body {
     @apply bg-primary text-white;
 }
 
+p {
+    @apply font-normal;
+}
+
 .item-social{
-    @apply duration-300 bg-[#171F2F] hover:bg-white text-white hover:text-[#171F2F] text-[0.6rem] h-6 w-6 rounded-full flex items-center justify-center;
+    @apply duration-300 bg-[#454A5F]/40 hover:scale-[1.4] hover:bg-white text-white hover:text-[#131823] text-[0.6rem] h-6 w-6 rounded-full flex items-center justify-center cursor-pointer;
 }
 
 .details div:last-child .detail__value,

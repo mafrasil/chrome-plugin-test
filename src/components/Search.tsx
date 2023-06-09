@@ -17,13 +17,30 @@ const options: OptionType[] = initialRecipes.map((recipe) => ({
 }));
 
 const colourStyles: StylesConfig<OptionType, false> = {
-  control: (styles) => ({ ...styles, backgroundColor: '#0D1119', color: "#FFF", borderColor: '#5B6178' }),
+  menu: (styles: Styles) => ({ ...styles, backgroundColor: '#131823' }),
+  control: (styles, { isFocused }) => ({ 
+    ...styles, 
+    backgroundColor: '#131823', 
+    color: "#FFF", 
+    borderColor: isFocused ? '#FFF' : '#5B6178',
+    outline: 'none',
+    boxShadow: 'none',
+    '&:hover': {
+      borderColor: '#6e84dd',
+      outline: '#88a5e8',
+    },
+  }),
   option: (styles, { isDisabled, isSelected }) => {
     return {
         ...styles,
+        fontWeight: 500,
         backgroundColor: isSelected ? 'white' : '#0D1119',
         color: isSelected ? '#0D1119' : 'white',
         cursor: isDisabled ? 'not-allowed' : 'default',
+        '&:hover': {
+            backgroundColor: '#6e84dd',
+            color: '#fff',
+        },
     };
   },
   input: (styles: Styles) => ({ ...styles, color: '#fff' }),
