@@ -1,0 +1,24 @@
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    @apply overflow-hidden;
+}
+
+body {
+    @apply bg-primary text-white;
+}
+
+.item-social{
+    @apply duration-300 bg-[#171F2F] hover:bg-white text-white hover:text-[#171F2F] text-[0.6rem] h-6 w-6 rounded-full flex items-center justify-center;
+}
+
+.details div:last-child .detail__value,
+.details div:nth-last-child(2) .detail__value{
+    @apply bg-gradient-to-r from-[#FFBF43] to-[#FF4869] bg-clip-text text-transparent;
+}
