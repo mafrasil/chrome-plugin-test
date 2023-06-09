@@ -68,7 +68,7 @@ p {
 }
 
 .item-social{
-    @apply duration-300 bg-[#454A5F]/40 hover:scale-[1.4] hover:bg-white text-white hover:text-[#131823] text-[0.6rem] h-6 w-6 rounded-full flex items-center justify-center cursor-pointer;
+    @apply duration-300 bg-[#454A5F]/20 hover:scale-[1.4] hover:bg-white text-white hover:text-[#131823] text-[0.6rem] h-6 w-6 rounded-full flex items-center justify-center cursor-pointer;
 }
 
 .details div:last-child .detail__value,
