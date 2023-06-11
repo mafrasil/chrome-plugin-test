@@ -131,7 +131,7 @@ const Add: React.FC<AddProps> = ({ show, setShow, updateRecipes }) => {
     return (
         <AnimatePresence>
             {show && (
-            <motion.div layoutId="add" className={`absolute overflow-scroll bg-primary p-6 top-0 left-0 w-full h-full`} initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -300 }}>
+            <motion.div layoutId="add" className={`absolute overflow-scroll bg-primary p-6 top-0 left-0 w-full h-full`} initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0, transition: { ease: 'easeOut', duration: 0.4 } }} exit={{ opacity: 0, x: -300, transition: { ease: 'easeOut', duration: 0.4 } }}>
                 
                 <div className="py-4 flex items-center font-bold gap-x-6 px-3 border-b border-[#2E3347] mb-4">
                     <button onClick={() => setShow(false)}>
