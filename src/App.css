@@ -75,3 +75,29 @@ p {
 .details div:nth-last-child(2) .detail__value{
     @apply bg-gradient-to-r from-[#FFBF43] to-[#FF4869] bg-clip-text text-transparent;
 }
+
+.field{
+    @apply w-full mb-4 relative;
+}
+
+[data-append]:after{
+    content: attr(data-append);
+    @apply absolute right-3 top-3 h-full w-8 flex items-center justify-center text-[#454A5F] text-[0.8rem];
+}
+.field label {
+    @apply font-light block pb-1 text-sm;
+}
+  .field input, 
+  .field textarea {
+    @apply w-full focus:border-purple focus:text-purple outline-none bg-[#454A5F]/20 border border-[#454A5F] rounded-lg px-4 py-2 text-white text-[0.8rem] font-normal;
+  }
+
+.fi-sp {
+    background-image: url(/node_modules/.pnpm/flag-icons@6.7.0/node_modules/flag-icons/flags/4x3/es.svg);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

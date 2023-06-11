@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: "#0D1119",
         teal: "#17CFC4",
+        purple: "#764AF4",
       },
       fontFamily: {
         helvetica: ["helvetica", "sans-serif"],

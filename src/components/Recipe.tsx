@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion"
-import { initialRecipes } from '../testData/initialRecipes';
+import { Recipe as RType } from '../types/Recipe';
+import { getDifficultyText } from './Search';
 
 interface RecipeProps {
-  dish: typeof initialRecipes[number];
+  dish: RType;
 }
 
 const Recipe: React.FC<RecipeProps> = ({ dish }) => {
@@ -15,8 +16,10 @@ const Recipe: React.FC<RecipeProps> = ({ dish }) => {
       <AnimatePresence mode="wait">
       <motion.div layoutId="recipe" className="bg-[#131823] rounded-md p-3" key={dish.name}>
           <div className=" bg-[#17CFC4] rounded-md text-primary px-6 py-3">
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.3 } }} exit={{ opacity: 0 }} className="font-bold text-xl">Difficulty: {dish.difficulty}</motion.p>
-              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.6 } }} exit={{ opacity: 0 }}>{dish.description}</motion.p>
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.3 } }} exit={{ opacity: 0 }} className="font-bold text-xl">Difficulty: {getDifficultyText(dish.difficulty)}</motion.p>
+              <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.6 } }} exit={{ opacity: 0 }}>
+                  {dish.description.length > 70 ? dish.description.slice(0, 70) + '...' : dish.description}
+              </motion.p>
               <motion.button whileHover={{ scale: 1.05 }} layoutId="recipeBtn" className="bg-[#131823] rounded-md text-white w-full text-sm p-2 mt-2" onClick={() => setIsExpanded(!isExpanded)}>
                   View Full Recipe
               </motion.button>

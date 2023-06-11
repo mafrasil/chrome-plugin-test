@@ -1,26 +1,15 @@
 import { motion } from 'framer-motion';
-
-interface IngredientDetail {
-    ingredient: string;
-    color: string;
-  }
   
   interface DetailProps {
     index: number;
-    detail: { name: string; value: string | IngredientDetail[] };
+    name: string;
+    value: string;
   }
   
-  const Detail: React.FC<DetailProps> = ({ detail, index }) => (
+  const Detail: React.FC<DetailProps> = ({ index, name, value }) => (
     <motion.div initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.15 * index } }} className="detail">
-      <p className="text-[#7185AA] text-xs font-light detail__name">{detail.name}</p>
-      {Array.isArray(detail.value)
-        ? detail.value.map(({ ingredient, color }, index, array) => (
-            <span style={{ color }}>
-                {ingredient} {index < array.length - 1 && <span className="text-white"> / </span>}
-            </span>
-          ))
-        : <p className="detail__value">{detail.value}</p>
-      }
+      <p className="text-[#7185AA] text-xs font-light detail__name">{name}</p>
+      <p className="detail__value">{value}</p>
     </motion.div>
   );
   
